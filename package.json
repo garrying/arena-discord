@@ -12,6 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "arena-feed": "^0.0.3",
     "discord.js": "^14.23.2"
   },
   "devDependencies": {

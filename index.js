@@ -1,44 +1,30 @@
-import { Client, EmbedBuilder, Events, GatewayIntentBits } from "discord.js";
+import followed from "./lib/arenaFollowed.js";
+
+import arenaFeed from "arena-feed";
+import { Client, Events, GatewayIntentBits } from "discord.js";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
-const exampleEmbed = new EmbedBuilder()
-  .setColor(0x0099ff)
-  .setTitle("Some title")
-  .setURL("https://are.na/")
-  .setAuthor({
-    name: "Some name",
-    iconURL: "https://i.imgur.com/AfFp7pu.png",
-    url: "https://are.na",
-  })
-  .setDescription("Some description here")
-  .setThumbnail("https://i.imgur.com/AfFp7pu.png")
-  .addFields(
-    { name: "Regular field title", value: "Some value here" },
-    { name: "\u200B", value: "\u200B" },
-    { name: "Inline field title", value: "Some value here", inline: true },
-    { name: "Inline field title", value: "Some value here", inline: true }
-  )
-  .addFields({
-    name: "Inline field title",
-    value: "Some value here",
-    inline: true,
-  })
-  .setImage("https://i.imgur.com/AfFp7pu.png")
-  .setTimestamp()
-  .setFooter({
-    text: "Some footer text here",
-    iconURL: "https://i.imgur.com/AfFp7pu.png",
-  });
+const arenaPersonalFeed = await arenaFeed(process.env.ARENA_TOKEN);
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Ready! Logged in as ${readyClient.user.tag}`);
+
+  const stories = arenaPersonalFeed.items;
 
   const channelId = process.env.CHANNEL_ID;
   const channel = client.channels.cache.get(channelId);
 
   if (channel) {
-    channel.send({ embeds: [exampleEmbed] });
+    stories.forEach((story) => {
+      if (story.action == "added") {
+        // added();
+      } else if (story.action == "followed") {
+        const embed = followed(story);
+        channel.send({ embeds: [embed] });
+      } else if (story.action == "commented on") {
+        // commented();
+      }
+    });
   } else {
     console.log("Channel not found");
   }
