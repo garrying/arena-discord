@@ -1,3 +1,4 @@
+import commented from "./lib/arenaCommented.js";
 import followed from "./lib/arenaFollowed.js";
 
 import arenaFeed from "arena-feed";
@@ -8,7 +9,6 @@ const arenaPersonalFeed = await arenaFeed(process.env.ARENA_TOKEN);
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Ready! Logged in as ${readyClient.user.tag}`);
-
   const stories = arenaPersonalFeed.items;
 
   const channelId = process.env.CHANNEL_ID;
@@ -22,7 +22,7 @@ client.once(Events.ClientReady, (readyClient) => {
         const embed = followed(story);
         channel.send({ embeds: [embed] });
       } else if (story.action == "commented on") {
-        // commented();
+        commented(story);
       }
     });
   } else {

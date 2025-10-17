@@ -28,7 +28,6 @@ export default defineConfig([
       "no-shadow": ["error", { allow: ["err", "resolve", "reject"] }],
       "no-trailing-spaces": ["error"],
       "no-var": "error",
-      "no-undef": "off",
       "object-curly-spacing": ["error", "always"],
       "prefer-const": "error",
       semi: ["error", "always"],
