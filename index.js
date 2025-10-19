@@ -1,5 +1,5 @@
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import arenaCommon from "./lib/arenaCommon.js";
+import arenaCommon from "./lib/arenaConfig.js";
 import processArenaFeed from "./lib/arenaEmbedFeed.js";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });

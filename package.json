@@ -16,8 +16,9 @@
     "discord.js": "^14.23.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
-    "eslint": "^9.37.0",
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-import": "^2.32.0",
     "globals": "^16.4.0"
   }
 }

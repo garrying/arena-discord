@@ -1,13 +1,17 @@
 import js from "@eslint/js";
-import { defineConfig } from "eslint/config";
+import importPlugin from "eslint-plugin-import";
 import globals from "globals";
 
-export default defineConfig([
+export default [
+  js.configs.recommended,
+  importPlugin.flatConfigs.recommended,
   {
     files: ["**/*.{js,mjs,cjs}"],
-    plugins: { js },
-    extends: ["js/recommended"],
-    languageOptions: { globals: globals.node },
+    languageOptions: {
+      globals: globals.node,
+      ecmaVersion: "latest",
+      sourceType: "module",
+    },
     rules: {
       "arrow-spacing": ["warn", { before: true, after: true }],
       "comma-spacing": "error",
@@ -45,6 +49,9 @@ export default defineConfig([
       "space-unary-ops": "error",
       "spaced-comment": "error",
       yoda: "error",
+      "no-unused-vars": "off",
+      "import/no-dynamic-require": "warn",
+      "import/no-nodejs-modules": "warn",
     },
   },
-]);
+];
