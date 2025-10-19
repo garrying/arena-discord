@@ -17,7 +17,7 @@ client.once(Events.ClientReady, (readyClient) => {
   if (channel) {
     stories.forEach((story) => {
       if (story.action == "added") {
-        // added();
+        // added(story);
       } else if (story.action == "followed") {
         const embed = followed(story);
         channel.send({ embeds: [embed] });
@@ -30,5 +30,4 @@ client.once(Events.ClientReady, (readyClient) => {
   }
 });
 
-// Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
