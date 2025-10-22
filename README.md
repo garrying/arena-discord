@@ -10,7 +10,8 @@ A Discord bot that automatically shares content from an Are.na user's feed to a 
 4. Register a new application on Are.na at [dev.are.na](https://dev.are.na/), and get the `Personal Access Token` (`ARENA_TOKEN`)
 5. Copy the Channel ID from Discord (`CHANNEL_ID`)
 6. Add `ARENA_TOKEN`,`DISCORD_TOKEN`, `CHANNEL_ID` environment variables
-7. Run using `pm2`
+7. Install dependencies: `npm install`
+8. Run using `pm2 start index.js --name "arena-discord"`
 
 ### Environment Variables
 
