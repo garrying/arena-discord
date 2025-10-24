@@ -13,7 +13,8 @@ client.once(Events.ClientReady, async (readyClient) => {
   if (channel) {
     await processArenaFeed(channel);
     setInterval(async () => {
-      await processArenaFeed(channel);
+      const intervalTime = Date.now();
+      await processArenaFeed(channel, intervalTime);
     }, arenaCommon.interval);
   } else {
     console.log("Channel not found");
