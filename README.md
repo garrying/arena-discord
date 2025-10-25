@@ -2,6 +2,12 @@
 
 A Discord bot that automatically shares content from an Are.na user's feed to a Discord channel.
 
+## Prerequisites
+
+- Node.js 22.x or higher
+- An Are.na account
+- Discord server with admin permissions
+
 ## Setup
 
 1. Create your Discord application using the [Discord developer portal](https://discord.com/developers/applications)
@@ -13,6 +19,12 @@ A Discord bot that automatically shares content from an Are.na user's feed to a 
 7. Install dependencies: `npm install`
 8. Run using `pm2 start index.js --name "arena-discord"`
 
+## Development
+
+1. Install dependencies: `npm install`
+2. Create a `.env` with the environment variables
+3. Run `npm run dev`
+
 ### Environment Variables
 
 | Variable        | Description                                               |
@@ -23,4 +35,4 @@ A Discord bot that automatically shares content from an Are.na user's feed to a 
 
 ## License
 
-GNU General Public License v3.0.
+GNU General Public License v3.0
