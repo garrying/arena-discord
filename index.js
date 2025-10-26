@@ -1,5 +1,5 @@
 import { Client, Events, GatewayIntentBits } from "discord.js";
-import arenaCommon from "./lib/arenaConfig.js";
+import arenaCommonConfig from "./lib/arenaConfig.js";
 import processArenaFeed from "./lib/arenaEmbedFeed.js";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -15,7 +15,7 @@ client.once(Events.ClientReady, async (readyClient) => {
     setInterval(async () => {
       const intervalTime = Date.now();
       await processArenaFeed(channel, intervalTime);
-    }, arenaCommon.interval);
+    }, arenaCommonConfig.interval);
   } else {
     console.log("Channel not found");
   }
