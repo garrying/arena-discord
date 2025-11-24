@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "arena-feed": "^0.0.3",
-    "discord.js": "^14.24.2"
+    "discord.js": "^14.25.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
