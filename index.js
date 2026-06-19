@@ -11,10 +11,12 @@ client.once(Events.ClientReady, async (readyClient) => {
   const channel = client.channels.cache.get(channelId);
 
   if (channel) {
+    let lastRun = Date.now();
     await processArenaFeed(channel);
     setInterval(async () => {
-      const intervalTime = Date.now();
-      await processArenaFeed(channel, intervalTime);
+      const windowStart = lastRun;
+      lastRun = Date.now();
+      await processArenaFeed(channel, windowStart);
     }, arenaCommonConfig.interval);
   } else {
     console.log("Channel not found");

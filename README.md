@@ -13,7 +13,7 @@ A Discord bot that automatically shares content from an Are.na user's feed to a 
 1. Create your Discord application using the [Discord developer portal](https://discord.com/developers/applications)
 2. Invite your application to the server by generating an OAuth2 URL with `bot` and `applications.commands` options selected
 3. Generate a token for `DISCORD_TOKEN` in the Bot section of your application
-4. Register a new application on Are.na at [dev.are.na](https://dev.are.na/), and get the `Personal Access Token` (`ARENA_TOKEN`)
+4. Generate a Personal Access Token for `ARENA_TOKEN` on Are.na at [are.na/developers](https://www.are.na/developers/personal-access-tokens)
 5. Copy the Channel ID from Discord (`CHANNEL_ID`)
 6. Add `ARENA_TOKEN`,`DISCORD_TOKEN`, `CHANNEL_ID` environment variables
 7. Install dependencies: `npm install`

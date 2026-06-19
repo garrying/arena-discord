@@ -12,12 +12,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "arena-feed": "^0.0.3",
-    "discord.js": "^14.25.1"
+    "discord.js": "^14.26.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "eslint": "^10.0.2",
-    "globals": "^17.3.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0"
   }
 }
