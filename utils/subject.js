@@ -1,4 +1,5 @@
 import colors from "./colors.js";
+import { largeImage } from "./image.js";
 import arenaBase from "../lib/arenaConfig.js";
 
 export function renderSubject(subject) {
@@ -28,7 +29,7 @@ export function renderSubject(subject) {
           subject.source?.url ||
           subject.attachment?.url ||
           `${arenaBase.url}block/${subject.id}`,
-        image: subject.image?.src || undefined,
+        image: largeImage(subject.image),
         description:
           (subject.type === "Text"
             ? subject.content?.markdown
